@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green Nature Organic Farming</title>
+
+<style>
+
+/* ===== GLOBAL STYLING ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    color:#333;
+    line-height:1.6;
+}
+
+/* ===== HEADER ===== */
+header{
+    background:#2e7d32;
+    color:white;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+header h1{
+    font-size:30px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    flex-wrap:wrap;
+}
+
+nav ul li{
+    margin:10px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:yellow;
+}
+
+/* ===== SECTION ===== */
+section{
+    padding:60px 20px;
+    text-align:center;
+}
+
+section h2{
+    color:#2e7d32;
+    font-size:36px;
+    margin-bottom:15px;
+}
+
+/* ===== HOME SECTION ===== */
+#home{
+    background:white;
+}
+
+#home img{
+    width:100%;
+    max-width:900px;
+    border-radius:15px;
+    margin-top:20px;
+}
+
+/* ===== BUTTON ===== */
+button{
+    background:#2e7d32;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.4s;
+}
+
+button:hover{
+    background:#1b5e20;
+    transform:scale(1.05);
+}
+
+/* ===== CARD SECTION ===== */
+.card-container{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.card{
+    background:white;
+    width:280px;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+}
+
+.card h3{
+    color:#2e7d32;
+    margin:15px 0;
+}
+
+.card p{
+    padding:0 15px 20px;
+}
+
+/* ===== TABLE ===== */
+table{
+    width:100%;
+    max-width:900px;
+    margin:auto;
+    border-collapse:collapse;
+    background:white;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+table th,
+table td{
+    border:1px solid #ccc;
+    padding:15px;
+}
+
+table th{
+    background:#2e7d32;
+    color:white;
+}
+
+/* ===== GALLERY ===== */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+    margin-top:30px;
+}
+
+.gallery img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:12px;
+    transition:0.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+}
+
+/* ===== OFFER SECTION ===== */
+.offer-section{
+    background:linear-gradient(to right,#2e7d32,#66bb6a);
+    color:white;
+}
+
+.offer-section h2{
+    color:white;
+}
+
+.offer-box{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.offer-card{
+    background:white;
+    color:#333;
+    width:260px;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+}
+
+.offer-card h3{
+    color:#2e7d32;
+    margin-bottom:15px;
+}
+
+/* ===== REVIEWS ===== */
+.review-container{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.review{
+    background:white;
+    width:300px;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+.review h4{
+    color:#2e7d32;
+    margin-top:15px;
+}
+
+/* ===== CONTACT FORM ===== */
+form{
+    background:white;
+    max-width:500px;
+    margin:auto;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+form input,
+form textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+form button{
+    width:100%;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    background:#2e7d32;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+
+header{
+    flex-direction:column;
+}
+
+nav ul{
+    justify-content:center;
+}
+
+.card-container,
+.offer-box,
+.review-container{
+    flex-direction:column;
+    align-items:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+
+<h1>Green Nature Organic Farming</h1>
+
+<nav>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+</header>
+
+<!-- ===== HOME ===== -->
+<section id="home">
+
+<h2>Welcome to Green Nature Organic Farming</h2>
+
+<p>
+Healthy Food • Healthy Life • Organic Future
+</p>
+
+<img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854" alt="Farm">
+
+<br><br>
+
+<button onclick="showMessage()">
+Explore Farm
+</button>
+
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+
+<h2>About Our Farm</h2>
+
+<p>
+We are dedicated to producing healthy organic products using eco-friendly and sustainable farming methods.
+Our farm provides fresh vegetables, fruits, milk, grains, and dairy products directly from nature to your home.
+</p>
+
+<div class="card-container">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399" alt="">
+<h3>Our Vision</h3>
+<p>
+To create a healthier future through natural and sustainable farming.
+</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" alt="">
+<h3>Our Mission</h3>
+<p>
+To deliver fresh organic products while protecting the environment.
+</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1523741543316-beb7fc7023d8" alt="">
+<h3>Smart Organic Farming</h3>
+<p>
+Using modern farming technology with natural cultivation methods.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ===== PRODUCTS ===== -->
+<section id="products">
+
+<h2>Our Organic Products</h2>
+
+<div class="card-container">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1542838132-92c53300491e" alt="">
+<h3>Fresh Vegetables</h3>
+<p>
+Fresh tomatoes, carrots, spinach, potatoes, onions, and seasonal vegetables.
+</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1519996529931-28324d5a630e" alt="">
+<h3>Organic Fruits</h3>
+<p>
+Naturally grown mangoes, bananas, apples, and citrus fruits.
+</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1563636619-e9143da7973b" alt="">
+<h3>Pure Milk</h3>
+<p>
+Healthy organic milk from naturally fed dairy cows.
+</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1471943311424-646960669fbc" alt="">
+<h3>Farm Eggs</h3>
+<p>
+Fresh and nutritious organic eggs from healthy farm chickens.
+</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1509440159596-0249088772ff" alt="">
+<h3>Organic Grains</h3>
+<p>
+Rice, wheat, pulses, and healthy grains free from chemicals.
+</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc" alt="">
+<h3>Natural Honey</h3>
+<p>
+Pure honey collected naturally from organic bee farms.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services">
+
+<h2>Farm Services</h2>
+
+<div class="card-container">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1521791136064-7986c2920216" alt="">
+<h3>Home Delivery</h3>
+<p>
+Fast and fresh delivery of vegetables, milk, fruits, and groceries.
+</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3" alt="">
+<h3>Online Booking</h3>
+<p>
+Book organic product packages and farm visits online easily.
+</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="">
+<h3>Farm Visits</h3>
+<p>
+Enjoy farm tours, nature walks, and live farming experiences.
+</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622" alt="">
+<h3>Family Picnic</h3>
+<p>
+Book peaceful family picnic experiences in a green environment.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ===== SPECIAL OFFERS ===== -->
+<section class="offer-section">
+
+<h2>Special Organic Offers</h2>
+
+<p>
+Healthy packages and fresh products for every family.
+</p>
+
+<div class="offer-box">
+
+<div class="offer-card">
+<h3>Weekly Vegetable Box</h3>
+<p>
+Fresh vegetables delivered weekly to your home.
+</p>
+</div>
+
+<div class="offer-card">
+<h3>Monthly Milk Plan</h3>
+<p>
+Daily organic milk subscription with discounts.
+</p>
+</div>
+
+<div class="offer-card">
+<h3>Family Organic Package</h3>
+<p>
+Milk, vegetables, grains, and fruits in one healthy package.
+</p>
+</div>
+
+</div>
+
+<br>
+
+<button>
+Book Now
+</button>
+
+</section>
+
+<!-- ===== SPECIFICATIONS ===== -->
+<section id="specifications">
+
+<h2>Farm Specifications</h2>
+
+<table>
+
+<tr>
+<th>Specification</th>
+<th>Details</th>
+</tr>
+
+<tr>
+<td>Total Farm Area</td>
+<td>150 Acres</td>
+</tr>
+
+<tr>
+<td>Main Products</td>
+<td>Vegetables, Fruits, Milk, Grains</td>
+</tr>
+
+<tr>
+<td>Irrigation</td>
+<td>Drip & Sprinkler Systems</td>
+</tr>
+
+<tr>
+<td>Farming Type</td>
+<td>100% Organic Farming</td>
+</tr>
+
+<tr>
+<td>Power Source</td>
+<td>Solar Energy</td>
+</tr>
+
+<tr>
+<td>Technology</td>
+<td>Smart Farming Sensors</td>
+</tr>
+
+</table>
+
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section id="gallery">
+
+<h2>Farm Gallery</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854" alt="">
+<img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399" alt="">
+<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" alt="">
+<img src="https://images.unsplash.com/photo-1523741543316-beb7fc7023d8" alt="">
+<img src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf" alt="">
+<img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30" alt="">
+
+</div>
+
+</section>
+
+<!-- ===== CUSTOMER REVIEWS ===== -->
+<section>
+
+<h2>Customer Reviews</h2>
+
+<div class="review-container">
+
+<div class="review">
+<p>
+"Best organic vegetables and milk quality. Highly recommended!"
+</p>
+<h4>- Rahul Sharma</h4>
+</div>
+
+<div class="review">
+<p>
+"We visited the farm with family and loved the peaceful atmosphere."
+</p>
+<h4>- Priya Verma</h4>
+</div>
+
+<div class="review">
+<p>
+"Fresh delivery and natural products every time."
+</p>
+<h4>- Arjun Patel</h4>
+</div>
+
+</div>
+
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+
+<h2>Contact Us</h2>
+
+<form id="contactForm">
+
+<input type="text" id="name" placeholder="Enter your name">
+
+<input type="email" id="email" placeholder="Enter your email">
+
+<textarea id="message" rows="5" placeholder="Enter your message"></textarea>
+
+<button type="submit">
+Submit
+</button>
+
+</form>
+
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+
+<p>
+© 2026 Green Nature Organic Farming | All Rights Reserved
+</p>
+
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+
+function showMessage(){
+    alert("Welcome to Green Nature Organic Farming!");
+}
+
+/* ===== CONTACT FORM VALIDATION ===== */
+document.getElementById("contactForm").addEventListener("submit", function(event){
+
+event.preventDefault();
+
+let name = document.getElementById("name").value.trim();
+let email = document.getElementById("email").value.trim();
+let message = document.getElementById("message").value.trim();
+
+let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+if(name === "" || email === "" || message === ""){
+    alert("Please fill all fields.");
+    return;
+}
+
+if(!email.match(emailPattern)){
+    alert("Please enter a valid email address.");
+    return;
+}
+
+alert("Form submitted successfully!");
+
+document.getElementById("contactForm").reset();
+
+});
+
+</script>
+
+</body>
+</html>
